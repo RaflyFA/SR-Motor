@@ -3,18 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Send } from "lucide-react";
+import { MessageSquare, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const BookingForm = () => {
+const ContactForm = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    service: "",
-    date: "",
     message: "",
   });
 
@@ -22,7 +19,7 @@ const BookingForm = () => {
     e.preventDefault();
     
     // Validation
-    if (!formData.name || !formData.phone || !formData.service || !formData.date) {
+    if (!formData.name || !formData.phone || !formData.message) {
       toast({
         title: "Form Tidak Lengkap",
         description: "Mohon lengkapi semua field yang wajib diisi",
@@ -32,13 +29,11 @@ const BookingForm = () => {
     }
 
     // Create WhatsApp message
-    const message = `Halo, saya ingin booking servis bengkel dengan detail berikut:
+    const message = `Halo, saya ingin bertanya:
 
 Nama: ${formData.name}
 No. Telepon: ${formData.phone}
-Layanan: ${formData.service}
-Tanggal: ${formData.date}
-${formData.message ? `\nCatatan: ${formData.message}` : ""}
+Pertanyaan: ${formData.message}
 
 Terima kasih!`;
 
@@ -56,19 +51,19 @@ Terima kasih!`;
   };
 
   return (
-    <section id="booking" className="py-20 bg-secondary">
+    <section id="contact" className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           <Card className="border-2 shadow-workshop">
             <CardHeader className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 mx-auto mb-4">
-                <Calendar className="w-8 h-8 text-primary" />
+                <MessageSquare className="w-8 h-8 text-primary" />
               </div>
               <CardTitle className="text-3xl md:text-4xl font-bold">
-                Booking <span className="text-primary">Sekarang</span>
+                Hubungi <span className="text-primary">Kami</span>
               </CardTitle>
               <CardDescription className="text-base">
-                Isi form di bawah ini dan kami akan segera menghubungi Anda via WhatsApp
+                Ada pertanyaan? Isi form di bawah ini dan kami akan segera merespons via WhatsApp
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -97,46 +92,14 @@ Terima kasih!`;
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="service">Jenis Layanan *</Label>
-                  <Select
-                    value={formData.service}
-                    onValueChange={(value) => setFormData({ ...formData, service: value })}
-                    required
-                  >
-                    <SelectTrigger id="service">
-                      <SelectValue placeholder="Pilih layanan" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="servis-rutin">Servis Rutin</SelectItem>
-                      <SelectItem value="ganti-oli">Ganti Oli & Filter</SelectItem>
-                      <SelectItem value="aki-kelistrikan">Aki & Kelistrikan</SelectItem>
-                      <SelectItem value="ac-mobil">AC Mobil</SelectItem>
-                      <SelectItem value="tune-up">Tune Up</SelectItem>
-                      <SelectItem value="general-check">General Check Up</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="date">Tanggal Booking *</Label>
-                  <Input
-                    id="date"
-                    type="date"
-                    value={formData.date}
-                    onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                    min={new Date().toISOString().split('T')[0]}
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message">Catatan Tambahan (Opsional)</Label>
+                  <Label htmlFor="message">Pertanyaan / Pesan *</Label>
                   <Textarea
                     id="message"
-                    placeholder="Jelaskan kondisi kendaraan atau permintaan khusus"
+                    placeholder="Tuliskan pertanyaan atau pesan Anda di sini..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={4}
+                    rows={5}
+                    required
                   />
                 </div>
 
@@ -157,4 +120,4 @@ Terima kasih!`;
   );
 };
 
-export default BookingForm;
+export default ContactForm;

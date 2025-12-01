@@ -2,13 +2,18 @@ import { Button } from "@/components/ui/button";
 import { Wrench, Zap } from "lucide-react";
 
 const Hero = () => {
-  const scrollToBooking = () => {
-    const bookingSection = document.getElementById("booking");
-    bookingSection?.scrollIntoView({ behavior: "smooth" });
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    contactSection?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById("services");
+    servicesSection?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-dark">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-dark pt-20">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItaDJ2LTJoLTJ6bTAtNHYyaDJ2LTJoLTJ6bTAtNHYyaDJ2LTJoLTJ6bTAtNHYyaDJ2LTJoLTJ6bTAtNHYyaDJ2LTJoLTJ6bTAtNHYyaDJ2LTJoLTJ6bTAtNHYyaDJ2LTJoLTJ6bTAtNHYyaDJ2LTJoLTJ6bTAtNHYyaDJ2LTJoLTJ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20"></div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -30,15 +35,16 @@ const Hero = () => {
             <Button 
               size="lg"
               className="bg-gradient-hero hover:opacity-90 shadow-workshop text-lg px-8 py-6 rounded-xl transition-all hover:scale-105"
-              onClick={scrollToBooking}
+              onClick={scrollToContact}
             >
               <Zap className="mr-2 h-5 w-5" />
-              Booking Sekarang
+              Hubungi Kami
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-6 rounded-xl transition-all"
+              onClick={scrollToServices}
             >
               Lihat Layanan
             </Button>
