@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+        isScrolled ? "bg-background/95 backdrop-blur-md shadow-lg" : "bg-accent-dark/95 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -45,7 +45,9 @@ const Navbar = () => {
             <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
               <Wrench className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-foreground">
+            <span className={`text-xl font-bold transition-colors ${
+              isScrolled ? "text-foreground" : "text-white"
+            }`}>
               Bengkel <span className="text-primary">Pro</span>
             </span>
           </div>
@@ -56,7 +58,9 @@ const Navbar = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-foreground/80 hover:text-primary transition-colors font-medium"
+                className={`hover:text-primary transition-colors font-medium ${
+                  isScrolled ? "text-foreground/80" : "text-white/90"
+                }`}
               >
                 {item.label}
               </button>
@@ -67,7 +71,7 @@ const Navbar = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className={`md:hidden ${isScrolled ? "" : "text-white"}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -80,12 +84,16 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border/50">
+          <div className={`md:hidden py-4 ${
+            isScrolled ? "border-t border-border/50" : "border-t border-white/20"
+          }`}>
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left py-3 text-foreground/80 hover:text-primary transition-colors font-medium"
+                className={`block w-full text-left py-3 hover:text-primary transition-colors font-medium ${
+                  isScrolled ? "text-foreground/80" : "text-white/90"
+                }`}
               >
                 {item.label}
               </button>

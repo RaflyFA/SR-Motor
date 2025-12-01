@@ -15,19 +15,19 @@ const Index = () => {
         <Hero />
       </div>
       
-      <CurvedDivider className="-mt-1" />
+      <CurvedDivider />
       
       <About />
       
-      <CurvedDivider flip className="-mb-1" />
+      <CurvedDivider flip />
       
       <Services />
       
-      <CurvedDivider className="-mt-1" />
+      <CurvedDivider />
       
       <ContactForm />
       
-      <CurvedDivider flip className="-mb-1" />
+      <CurvedDivider flip />
       
       <Footer />
     </div>

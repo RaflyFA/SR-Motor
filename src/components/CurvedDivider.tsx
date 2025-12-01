@@ -5,13 +5,14 @@ interface CurvedDividerProps {
 
 const CurvedDivider = ({ flip = false, className = "" }: CurvedDividerProps) => {
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative block ${className}`} style={{ lineHeight: 0 }}>
       <svg
-        className={`w-full ${flip ? "rotate-180" : ""}`}
+        className={`w-full block ${flip ? "rotate-180" : ""}`}
         viewBox="0 0 1440 200"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="none"
+        style={{ display: 'block' }}
       >
         {/* Layer 3 - Bottom */}
         <path
