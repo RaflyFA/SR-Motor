@@ -1,23 +1,33 @@
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import About from "@/components/About";
 import Services from "@/components/Services";
-import BookingForm from "@/components/BookingForm";
+import ContactForm from "@/components/BookingForm";
 import Footer from "@/components/Footer";
 import CurvedDivider from "@/components/CurvedDivider";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Hero />
+      <Navbar />
+      
+      <div id="home">
+        <Hero />
+      </div>
       
       <CurvedDivider className="-mt-1" />
       
-      <Services />
+      <About />
       
       <CurvedDivider flip className="-mb-1" />
       
-      <BookingForm />
+      <Services />
       
       <CurvedDivider className="-mt-1" />
+      
+      <ContactForm />
+      
+      <CurvedDivider flip className="-mb-1" />
       
       <Footer />
     </div>
