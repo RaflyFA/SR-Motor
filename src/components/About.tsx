@@ -59,19 +59,19 @@ const About = () => {
           })}
         </div>
 
-        <div className="mt-16 bg-secondary/50 rounded-2xl p-8 md:p-12">
+        <div className="mt-16 bg-accent-dark rounded-2xl p-8 md:p-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2">10+</div>
-              <div className="text-muted-foreground">Tahun Pengalaman</div>
+              <div className="text-white/70">Tahun Pengalaman</div>
             </div>
             <div>
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2">5000+</div>
-              <div className="text-muted-foreground">Pelanggan Puas</div>
+              <div className="text-white/70">Pelanggan Puas</div>
             </div>
             <div>
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2">15+</div>
-              <div className="text-muted-foreground">Teknisi Ahli</div>
+              <div className="text-white/70">Teknisi Ahli</div>
             </div>
           </div>
         </div>
