@@ -4,7 +4,6 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import ContactForm from "@/components/BookingForm";
 import Footer from "@/components/Footer";
-import CurvedDivider from "@/components/CurvedDivider";
 
 const Index = () => {
   return (
@@ -15,19 +14,11 @@ const Index = () => {
         <Hero />
       </div>
       
-      <CurvedDivider />
-      
       <About />
-      
-      <CurvedDivider flip />
       
       <Services />
       
-      <CurvedDivider />
-      
       <ContactForm />
-      
-      <CurvedDivider flip />
       
       <Footer />
     </div>

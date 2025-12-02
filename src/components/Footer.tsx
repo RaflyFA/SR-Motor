@@ -17,15 +17,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                <span className="text-muted-foreground">Jl. Raya Servis No. 123, Jakarta Selatan</span>
+                <span className="text-muted-foreground">Jl. Raya Kawali No.16, Jelat, Kec. Baregbeg, Kabupaten Ciamis, Jawa Barat 46274</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">0812-3456-7890</span>
+                <span className="text-muted-foreground">0895-2168-9687</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">info@bengkel.com</span>
+                <span className="text-muted-foreground">ketsureket@gmail.com</span>
               </div>
             </div>
           </div>
@@ -33,9 +33,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 text-primary">Jam Operasional</h3>
             <div className="space-y-2 text-muted-foreground">
-              <p>Senin - Jumat: 08.00 - 17.00</p>
-              <p>Sabtu: 08.00 - 15.00</p>
-              <p>Minggu: Tutup</p>
+              <p>Setiap Hari 07:00-17:00</p>
             </div>
           </div>
         </div>
