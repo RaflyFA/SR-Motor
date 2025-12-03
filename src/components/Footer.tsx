@@ -34,7 +34,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4 text-primary">Jam Operasional</h3>
             <div className="space-y-2 text-muted-foreground">
               <p>Setiap Hari 07:00-17:00</p>
-              <p>Teknisi datang di jam 09:00-04:00 di hari Senin-Jumat</p>
+              <p>Teknisi datang di jam 09:00-16:00 di hari Senin-Jumat</p>
             </div>
           </div>
         </div>
