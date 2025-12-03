@@ -97,7 +97,7 @@ const About = () => {
             </div>
             <div>
               <div className="text-2xl md:text-5xl font-bold text-primary mb-2">
-                6+
+                1
               </div>
               <div className="text-white/70 text-1xl">Teknisi Ahli</div>
             </div>
